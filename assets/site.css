@@ -1,5 +1,5 @@
 /* ============================================================================
-   DoomBlock - site design system
+   DoomBlock site design system
    ----------------------------------------------------------------------------
    One stylesheet for all three pages (index, privacy, account-deletion).
 
@@ -8,10 +8,10 @@
    product can never disagree about what DoomBlock looks like.
 
    Colour discipline, carried over from lib/core/constants/app_colors.dart:
-     - BLUE is the accent. Every call to action, every focus ring, every
+     * BLUE is the accent. Every call to action, every focus ring, every
        active state.
-     - GOLD marks Pro / pricing only. It is the "earned" colour.
-     - RED means DANGER and nothing else. It is never decoration. The site
+     * GOLD marks Pro / pricing only. It is the "earned" colour.
+     * RED means DANGER and nothing else. It is never decoration. The site
        used to use red as its brand accent, which is exactly the mistake the
        palette notes in the app describe fixing: when the accent and the
        warning are the same value, the one colour the eye should read as a
@@ -19,21 +19,21 @@
    ========================================================================= */
 
 :root {
-  /* Surfaces - true black foundation, near-black greys stepping up */
+  /* Surfaces: true black foundation, near-black greys stepping up */
   --bg: #000000;
   --surface: #0A0A0A;
   --card: #141414;
   --elevated: #1E1E1E;
   --modal: #1A1A1A;
 
-  /* Brand - electric blue */
+  /* Brand: electric blue */
   --primary: #2979FF;
   --primary-dim: #1554CC;
   --primary-glow: rgba(41, 121, 255, 0.20);
   --primary-glow-strong: rgba(41, 121, 255, 0.40);
   --on-primary: #FFFFFF;
 
-  /* Premium accent - cold gold */
+  /* Premium accent: cold gold */
   --gold: #FFD740;
   --gold-glow: rgba(255, 215, 64, 0.20);
   --on-gold: #000000;
@@ -41,7 +41,7 @@
   /* Text */
   --text: #FFFFFF;
   --text-2: #8A8A8E;
-  --text-3: #48484A;   /* decorative marks only - too dim for text on black */
+  --text-3: #48484A;   /* decorative marks only, too dim for text on black */
   --text-doc: #C9C9CE;
 
   /* Semantic */
@@ -140,7 +140,7 @@ a:hover { text-decoration: underline; }
 
 /* The badge breathes; the case never moves. The painter is explicit about why
    (see PulsingDoomLogo): thumping the whole mark reads as a logo bouncing, so
-   the beat is spent where the meaning is - on the lock and its keyhole. */
+   the beat is spent where the meaning is, on the lock and its keyhole. */
 @media (prefers-reduced-motion: no-preference) {
   .mark-beat .db-badge {
     transform-origin: 50px 58.25px;
@@ -806,7 +806,7 @@ footer {
 .lead { font-size: 1.08rem; }
 
 /* Callouts. .callout is neutral/informational (blue); .callout-warn is for
-   the genuinely consequential - irreversible deletion - and is the only place
+   the genuinely consequential (irreversible deletion), and is the only place
    on the site that earns red. */
 .callout {
   border: 1px solid var(--border-light);

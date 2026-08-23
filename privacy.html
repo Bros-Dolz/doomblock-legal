@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DoomBlock - Privacy Policy</title>
+  <title>DoomBlock | Privacy Policy</title>
   <meta name="description" content="How DoomBlock handles your data: accounts, cloud backup, subscriptions, the permissions it asks for, and how to delete everything.">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
@@ -70,7 +70,7 @@
     <p>
       <strong>The short version.</strong> Blocking runs entirely on your device.
       What you browse and which apps you open are checked against your own block
-      list and thrown away immediately - they are never stored and never leave
+      list and thrown away immediately. They are never stored and never leave
       your phone. What does leave your phone is your account email, your
       DoomBlock setup (so it can be backed up and synced), and the Google Play
       token that proves your subscription. There is no advertising and no
@@ -96,12 +96,12 @@
           <td>Provided by Google Sign-In; used to create your account with Supabase.</td>
         </tr>
         <tr>
-          <td>Your DoomBlock setup and history - block groups (the apps, websites, keywords and feeds you chose), schedules, session limits, app settings, cooldown configuration, the record of blocks you overrode, and the <strong>SHA-256 hash</strong> of your PIN</td>
+          <td>Your DoomBlock setup and history: block groups (the apps, websites, keywords and feeds you chose), schedules, session limits, app settings, cooldown configuration, the record of blocks you overrode, and the <strong>SHA-256 hash</strong> of your PIN</td>
           <td>To back up your setup and sync it across your devices.</td>
-          <td>Stored in your account with Supabase, and only once you sign in. Your PIN itself is never stored or transmitted - only an irreversible hash of it.</td>
+          <td>Stored in your account with Supabase, and only once you sign in. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
         </tr>
         <tr>
-          <td>Subscription data - your Google Play purchase token and the product you bought</td>
+          <td>Subscription data: your Google Play purchase token and the product you bought</td>
           <td>To confirm your subscription is genuine and still active.</td>
           <td>Sent to our server function, which verifies it with Google Play. Google Play handles the payment; <strong>we never see your card or payment details</strong>.</td>
         </tr>
@@ -131,25 +131,25 @@
   <p>DoomBlock is an app blocker, so it asks for some sensitive permissions. Each is used only for the purpose below:</p>
   <ul>
     <li>
-      <strong>Accessibility service</strong> - enabled only after you accept a separate on-screen disclosure, and you can turn it off at any time in Android Settings &rarr; Accessibility. It collects three things:
+      <strong>Accessibility service.</strong> Enabled only after you accept a separate on-screen disclosure, and you can turn it off at any time in Android Settings &rarr; Accessibility. It collects three things:
       <ul>
         <li><em>Which app is currently in the foreground</em>, so a block can be enforced the moment a blocked app opens.</li>
-        <li><em>Web browsing history</em> - the web address (URL) shown in your browser's address bar - so that blocked websites and keywords can be detected. Only a page you have actually opened is checked; what you type into the address bar is not.</li>
+        <li><em>Web browsing history.</em> The web address (URL) shown in your browser's address bar, so that blocked websites and keywords can be detected. Only a page you have actually opened is checked; what you type into the address bar is not.</li>
         <li><em>The text of web pages opened inside other apps</em>, if you turn on blocking inside other apps' built-in browsers, so the same block list applies there.</li>
       </ul>
       All three are used for one purpose only: to compare them against the apps, websites and keywords you chose to block, and to show a block screen when something matches. This happens entirely on your device and the data is discarded immediately after the check. We never store your browsing history, never transmit it off your device, and never share or sell it. The service does not read your messages, your passwords, or what you type.
     </li>
-    <li><strong>Usage access</strong> - measures time spent in apps, to power your session limits and your statistics.</li>
-    <li><strong>Display over other apps</strong> - shows the block screen on top of a blocked app.</li>
-    <li><strong>Notifications, background running and battery-optimisation exemption</strong> - keeps the blocking service alive with its ongoing notification, so blocking is not silently killed by the system.</li>
-    <li><strong>Device admin (optional, only if you turn on Strict Mode)</strong> - prevents DoomBlock being uninstalled while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
+    <li><strong>Usage access.</strong> Measures time spent in apps, to power your session limits and your statistics.</li>
+    <li><strong>Display over other apps.</strong> Shows the block screen on top of a blocked app.</li>
+    <li><strong>Notifications, background running and battery-optimisation exemption.</strong> Keeps the blocking service alive with its ongoing notification, so blocking is not silently killed by the system.</li>
+    <li><strong>Device admin (optional, only if you turn on Strict Mode).</strong> Prevents DoomBlock being uninstalled while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
   </ul>
 
   <h2>Third parties</h2>
   <p>We share data only with the service providers needed to run the app:</p>
   <ul>
-    <li><strong>Supabase</strong> - authentication and cloud database, for your account and your backup.</li>
-    <li><strong>Google</strong> - Google Sign-In, Google Play services, and Google Play Billing for subscriptions.</li>
+    <li><strong>Supabase.</strong> Authentication and cloud database, for your account and your backup.</li>
+    <li><strong>Google.</strong> Google Sign-In, Google Play services, and Google Play Billing for subscriptions.</li>
   </ul>
 
   <h2>Data retention &amp; deletion</h2>
@@ -158,7 +158,7 @@
     any time inside the app (<em>Settings &rarr; your account &rarr; Delete
     account</em>), which permanently removes your account and your cloud backup
     and resets the app on your device. You can also request deletion without the
-    app - see our <a href="account-deletion.html">Account Deletion page</a>.
+    app. See our <a href="account-deletion.html">Account Deletion page</a>.
   </p>
   <p>
     Deleting your account does not cancel your Google Play subscription. Cancel

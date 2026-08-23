@@ -1,6 +1,6 @@
-/* Barlow Condensed - DoomBlock's display face, the same family the app bundles
+/* Barlow Condensed, DoomBlock's display face and the same family the app bundles
    (see pubspec.yaml). Embedded as data URIs so the brand type renders
-   everywhere - hosted, offline, or opened straight from disk - with no
+   everywhere (hosted, offline, or opened straight from disk) with no
    external font dependency and no flash of a fallback face.
 
    Only the two display weights are here. Body copy uses the system stack;
