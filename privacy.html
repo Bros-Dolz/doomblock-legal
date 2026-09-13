@@ -57,7 +57,7 @@
 <main class="wrap doc">
   <span class="eyebrow">Legal</span>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 28 August 2026</p>
+  <p class="updated">Last updated: 13 September 2026</p>
 
   <p class="lead">
     DoomBlock is a screen-time, app and website blocking app for Android,
@@ -79,24 +79,40 @@
           <td>Stored by our authentication and database provider, Supabase.</td>
         </tr>
         <tr>
+          <td>Password, if you create an account with email and password</td>
+          <td>To sign you in.</td>
+          <td>Stored by Supabase only as an irreversible <strong>bcrypt hash</strong>. Your actual password is never stored. If you sign in with Google, no password is stored at all.</td>
+        </tr>
+        <tr>
           <td>Google account (email &amp; basic profile), only if you sign in with Google</td>
           <td>To authenticate you without a separate password.</td>
           <td>Provided by Google Sign-In; used to create your account with Supabase.</td>
         </tr>
         <tr>
-          <td>Your DoomBlock setup and history: block groups (the apps, websites, keywords and feeds you chose), schedules, session limits, app settings, cooldown configuration, the record of blocks you overrode, and the <strong>SHA-256 hash</strong> of your PIN</td>
+          <td>
+            Your DoomBlock setup and history:
+            <ul>
+              <li>Block groups: the apps, websites, keywords and short-form content you chose, and their schedules.</li>
+              <li>Session limit and cooldown settings: pause duration, warning countdowns, PIN attempt limits.</li>
+              <li>Your statistics counters: blocks today, focus time today, total override count, and the last app you overrode.</li>
+              <li>Your override history: timestamp, which app, which group.</li>
+              <li>How you have labelled apps in statistics (productive / neutral / distraction).</li>
+              <li>App preferences: default redirect site, tip amount, and which screens you turned the PIN off for.</li>
+              <li>The <strong>SHA-256 hash</strong> of your PIN.</li>
+            </ul>
+          </td>
           <td>To back up your setup and sync it across your devices.</td>
           <td>Stored in your account with Supabase, and only once you sign in. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
         </tr>
         <tr>
-          <td>Subscription data: your Google Play purchase token and the product you bought</td>
-          <td>To confirm your subscription is genuine and still active.</td>
-          <td>Sent to our server function, which verifies it with Google Play. Google Play handles the payment; <strong>we never see your card or payment details</strong>.</td>
+          <td>Subscription data: your Google Play purchase token, the product you bought, your current subscription status, and &mdash; if you used one &mdash; your beta code and the date you redeemed it</td>
+          <td>To confirm your subscription is genuine and still active, and to unlock the features you are entitled to.</td>
+          <td>The purchase token is sent to our server function, which verifies it with Google Play; the resulting status is stored in your account with Supabase. Google Play handles the payment; <strong>we never see your card or payment details</strong>.</td>
         </tr>
         <tr>
           <td>On-device app-usage data (which app is in the foreground, time spent in each app)</td>
           <td>To enforce your blocks and limits, and to show you your own statistics.</td>
-          <td>Stays on your device. It is not uploaded, not sold, and not used for advertising.</td>
+          <td>The raw usage data stays on your device. It is not uploaded, not sold, and not used for advertising. Only the aggregated counters and override history listed above are backed up to your account, and only once you sign in.</td>
         </tr>
         <tr>
           <td>Web addresses and in-app page text</td>
@@ -110,7 +126,8 @@
   <h2>What DoomBlock does not do</h2>
   <ul>
     <li><strong>No advertising.</strong> DoomBlock shows no ads, contains no advertising SDK, and does not collect a device advertising identifier.</li>
-    <li><strong>No analytics.</strong> There is no analytics SDK and no automatic crash-reporting service in the app.</li>
+    <li><strong>No analytics.</strong> There is no analytics SDK and no automatic crash-reporting service in the app, and no tracking SDK of any kind.</li>
+    <li><strong>No access to your camera, microphone, location, contacts, SMS or call logs, or your files and photo storage.</strong> DoomBlock never requests these permissions.</li>
     <li><strong>We do not sell your personal data</strong>, and we do not share it for advertising or marketing.</li>
     <li><strong>Problem reports are yours to send.</strong> If you use the in-app "report a problem" option, it opens your email app with a message you can read and edit first. It contains the app version, your device model and Android version, and a short log of recent in-app events. Nothing is sent unless you send it.</li>
   </ul>
@@ -119,18 +136,19 @@
   <p>DoomBlock is an app blocker, so it asks for some sensitive permissions. Each is used only for the purpose below:</p>
   <ul>
     <li>
-      <strong>Accessibility service.</strong> Enabled only after you accept a separate on-screen disclosure, and you can turn it off at any time in Android Settings &rarr; Accessibility. It collects three things:
+      <strong>Accessibility service.</strong> Core to how the app works. It is enabled only after you accept a separate on-screen disclosure, and you can turn it off at any time in Android Settings &rarr; Accessibility. It collects three things:
       <ul>
         <li><em>Which app is currently in the foreground</em>, so a block can be enforced the moment a blocked app opens.</li>
         <li><em>Web browsing history.</em> The web address (URL) shown in your browser's address bar, so that blocked websites and keywords can be detected. Only a page you have actually opened is checked; what you type into the address bar is not.</li>
-        <li><em>The text of web pages opened inside other apps</em>, if you turn on blocking inside other apps' built-in browsers, so the same block list applies there.</li>
+        <li><em>The text of web pages opened inside other apps</em> &mdash; for example a link you open from within Instagram &mdash; if you turn on blocking inside other apps' built-in browsers, so the same block list applies there.</li>
       </ul>
       All three are used for one purpose only: to compare them against the apps, websites and keywords you chose to block, and to show a block screen when something matches. This happens entirely on your device and the data is discarded immediately after the check. We never store your browsing history, never transmit it off your device, and never share or sell it. The service does not read your messages, your passwords, or what you type.
     </li>
     <li><strong>Usage access.</strong> Measures time spent in apps, to power your session limits and your statistics.</li>
-    <li><strong>Display over other apps.</strong> Shows the block screen on top of a blocked app.</li>
-    <li><strong>Notifications, background running and battery-optimisation exemption.</strong> Keeps the blocking service alive with its ongoing notification, so blocking is not silently killed by the system.</li>
-    <li><strong>Device admin (optional, only if you turn on Strict Mode).</strong> Prevents DoomBlock being uninstalled while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
+    <li><strong>Display over other apps.</strong> Core to how the app works. Shows the block screen on top of a blocked app so you can interact with it, and displays your session-limit timer.</li>
+    <li><strong>Notifications and background running.</strong> Keeps the blocking service alive with its ongoing notification, which also shows you whether blocking is currently active and how much session time is left.</li>
+    <li><strong>Battery-optimisation exemption (optional, strongly recommended).</strong> Stops Android from killing the blocking service in the background. Blocking may be unreliable without it.</li>
+    <li><strong>Device admin (optional, only if you turn on Prevent Uninstall).</strong> Prevents DoomBlock from being uninstalled &mdash; by you or by anyone else &mdash; while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
   </ul>
 
   <h2>Third parties</h2>
@@ -139,6 +157,20 @@
     <li><strong>Supabase.</strong> Authentication and cloud database, for your account and your backup.</li>
     <li><strong>Google.</strong> Google Sign-In, Google Play services, and Google Play Billing for subscriptions.</li>
   </ul>
+
+  <h2>How your data is stored</h2>
+  <p>
+    Your backup is a single JSON snapshot attached to your account, held in our
+    Supabase database with row-level security enabled, so only your own account
+    can read your row. Data is encrypted in transit (HTTPS/TLS) and at rest by
+    Supabase. Passwords are hashed with bcrypt and your PIN with SHA-256; neither
+    can be recovered from what we store.
+  </p>
+  <p>
+    <strong>We never store the web addresses, searches or keywords you use</strong>,
+    and we never store your interactions with apps in our database. Those checks
+    happen on your device and the data is discarded immediately afterwards.
+  </p>
 
   <h2>Data retention &amp; deletion</h2>
   <p>
@@ -152,6 +184,16 @@
     Deleting your account does not cancel your Google Play subscription. Cancel
     that separately in the
     <a href="https://play.google.com/store/account/subscriptions">Play Store</a>.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    You can access, correct, export or delete your data at any time from inside
+    the app, or by emailing
+    <a href="mailto:support@brosdolz.com">support@brosdolz.com</a>. Depending on
+    where you live, you may also have the right to object to or restrict certain
+    processing, and to lodge a complaint with your local data protection
+    authority.
   </p>
 
   <h2>Children</h2>
