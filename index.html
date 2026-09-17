@@ -292,7 +292,7 @@
         <!-- Shown only while Play Console is actually selling the one-time
              unlock, which is how the offer is switched on and off. The app's
              paywall gates its own lifetime tile the same way. -->
-        <div class="plan" data-plan-lifetime hidden>
+        <div class="plan" data-plan-lifetime hidden style="display:none">
           <p class="plan-name">Lifetime</p>
           <p class="plan-price"><span data-price-lifetime>&mdash;</span><span class="per">once</span></p>
           <p class="plan-sub">One payment, no renewal. Yours for good.</p>
@@ -546,7 +546,7 @@
     //
     // Left empty, or unreachable, the page renders from the table and the
     // lifetime tile stays hidden. That is the fallback, not a broken state.
-    var ENDPOINT = ""; // e.g. "https://xxxxxxxx.supabase.co/functions/v1/pricing"
+    var ENDPOINT = "https://rchtdkofbaetpzxbxyvm.supabase.co/functions/v1/pricing";
     var LIVE = null;
 
     var tier = {}, name = {}, sorted = [];
@@ -644,7 +644,12 @@
 
       var tile = document.querySelector("[data-plan-lifetime]");
       if (tile) {
+        // Both, and the inline display is the one that does the work: `.plan`
+        // sets `display: flex`, and an author rule beats the browser's own
+        // `[hidden] { display: none }`. Clearing the inline value hands the tile
+        // back to the class rather than hard-coding flex here.
         tile.hidden = !lifetime;
+        tile.style.display = lifetime ? "" : "none";
         if (lifetime) {
           put("data-price-lifetime", money(lifetime));
           // Two tiles fit the 760px grid; three need room to stay side by side.
