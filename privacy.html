@@ -57,7 +57,7 @@
 <main class="wrap doc">
   <span class="eyebrow">Legal</span>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 13 September 2026</p>
+  <p class="updated">Last updated: 17 September 2026</p>
 
   <p class="lead">
     DoomBlock is a screen-time, app and website blocking app for Android,
@@ -65,6 +65,37 @@
     the app handles, why, and the choices you have. Questions? Email
     <a href="mailto:support@brosdolz.com">support@brosdolz.com</a>.
   </p>
+
+  <div class="callout">
+    <p>
+      <strong>Using DoomBlock without an account.</strong> Signing in is
+      optional. If you choose <em>Continue without an account</em> during setup
+      &mdash; or redeem a code before signing in &mdash; DoomBlock still creates
+      an account for you on our server, with <strong>no email address, no name
+      and no password attached to it</strong>. It is identified only by a random
+      ID. Your DoomBlock setup is backed up to that account exactly as it would
+      be to one you signed into, and a subscription or redeemed code is held
+      there too.
+    </p>
+    <p>Two things follow from that, and both are worth knowing up front:</p>
+    <ul>
+      <li>
+        <strong>It cannot be signed in to from another device.</strong> There is
+        no email or password to sign in with, so the account is reachable only
+        from the app on this phone. Adding an email address or a Google account
+        later (<em>Settings &rarr; Add an account</em>) attaches it to the
+        account you already have: the same ID, the same backup, the same
+        subscription. Nothing is created fresh and nothing is lost.
+      </li>
+      <li>
+        <strong>Deleting it takes one of the two routes on our
+        <a href="account-deletion.html">Account Deletion page</a></strong>,
+        because the in-app <em>Delete account</em> button sits behind the account
+        row, which an account with no email does not have. That page sets out
+        both routes, and their limits, in full.
+      </li>
+    </ul>
+  </div>
 
   <h2>Data we collect</h2>
   <div class="table-wrap">
@@ -74,9 +105,14 @@
       </thead>
       <tbody>
         <tr>
-          <td>Email address</td>
-          <td>To create and sign in to your account and secure your cloud backup.</td>
-          <td>Stored by our authentication and database provider, Supabase.</td>
+          <td>A random account ID, created for you whether or not you sign in</td>
+          <td>To have something for your backup, your subscription and any redeemed code to belong to, so they survive an app update and can be restored.</td>
+          <td>Created and stored by our authentication and database provider, Supabase. It is a random identifier generated on our side &mdash; not your advertising ID, not your Android ID, and not derived from your device or phone number. On its own it identifies nobody.</td>
+        </tr>
+        <tr>
+          <td>Email address, if you create an account or add one later</td>
+          <td>To sign you in, to secure your cloud backup, and to confirm that a deletion or export request really is yours.</td>
+          <td>Stored by Supabase. Optional: the app is fully usable without one.</td>
         </tr>
         <tr>
           <td>Password, if you create an account with email and password</td>
@@ -86,7 +122,7 @@
         <tr>
           <td>Google account (email &amp; basic profile), only if you sign in with Google</td>
           <td>To authenticate you without a separate password.</td>
-          <td>Provided by Google Sign-In; used to create your account with Supabase.</td>
+          <td>Provided by Google Sign-In; used to create or identify your account with Supabase.</td>
         </tr>
         <tr>
           <td>
@@ -102,17 +138,17 @@
             </ul>
           </td>
           <td>To back up your setup and sync it across your devices.</td>
-          <td>Stored in your account with Supabase, and only once you sign in. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
+          <td>Stored in your account with Supabase &mdash; including an account with no email address attached, which is why a cloud backup exists even if you never signed in. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
         </tr>
         <tr>
           <td>Subscription data: your Google Play purchase token, the product you bought, your current subscription status, and &mdash; if you used one &mdash; your beta code and the date you redeemed it</td>
           <td>To confirm your subscription is genuine and still active, and to unlock the features you are entitled to.</td>
-          <td>The purchase token is sent to our server function, which verifies it with Google Play; the resulting status is stored in your account with Supabase. Google Play handles the payment; <strong>we never see your card or payment details</strong>.</td>
+          <td>The purchase token is sent to our server function, which verifies it with Google Play; the resulting status is stored in your account with Supabase. The token is also kept on your device, because Google Play re-delivers it to the app on every launch &mdash; that is what lets a subscription keep working offline and before you have an email on your account. Google Play handles the payment; <strong>we never see your card or payment details</strong>.</td>
         </tr>
         <tr>
           <td>On-device app-usage data (which app is in the foreground, time spent in each app)</td>
           <td>To enforce your blocks and limits, and to show you your own statistics.</td>
-          <td>The raw usage data stays on your device. It is not uploaded, not sold, and not used for advertising. Only the aggregated counters and override history listed above are backed up to your account, and only once you sign in.</td>
+          <td>The raw usage data stays on your device. It is not uploaded, not sold, and not used for advertising. Only the aggregated counters and override history listed above are backed up to your account.</td>
         </tr>
         <tr>
           <td>Web addresses and in-app page text</td>
@@ -133,7 +169,12 @@
   </ul>
 
   <h2>Permissions the app requests</h2>
-  <p>DoomBlock is an app blocker, so it asks for some sensitive permissions. Each is used only for the purpose below:</p>
+  <p>
+    DoomBlock is an app blocker, so it asks for some sensitive permissions. Each
+    is used only for the purpose below, and each is requested in context &mdash;
+    at the point a feature you are using needs it &mdash; with the app telling
+    you whether that feature is broken without it or merely better with it.
+  </p>
   <ul>
     <li>
       <strong>Accessibility service.</strong> Core to how the app works. It is enabled only after you accept a separate on-screen disclosure, and you can turn it off at any time in Android Settings &rarr; Accessibility. It collects three things:
@@ -144,9 +185,9 @@
       </ul>
       All three are used for one purpose only: to compare them against the apps, websites and keywords you chose to block, and to show a block screen when something matches. This happens entirely on your device and the data is discarded immediately after the check. We never store your browsing history, never transmit it off your device, and never share or sell it. The service does not read your messages, your passwords, or what you type.
     </li>
-    <li><strong>Usage access.</strong> Measures time spent in apps, to power your session limits and your statistics.</li>
+    <li><strong>Usage access (optional).</strong> Measures time spent in apps. Statistics cannot be calculated without it, so it is required there. Blocking and session limits do <em>not</em> depend on it &mdash; session time is counted from the accessibility service's own window events &mdash; so for those the app treats it as a recommendation that makes detection more resilient, and one you can dismiss for good.</li>
     <li><strong>Display over other apps.</strong> Core to how the app works. Shows the block screen on top of a blocked app so you can interact with it, and displays your session-limit timer.</li>
-    <li><strong>Notifications and background running.</strong> Keeps the blocking service alive with its ongoing notification, which also shows you whether blocking is currently active and how much session time is left.</li>
+    <li><strong>Background running, and notifications (optional).</strong> The blocking service runs in the foreground with an ongoing notification, which Android requires and which also shows whether blocking is active. Beyond that, DoomBlock can tell you when blocking is paused and when session time is running out; each of those is a separate switch under <em>Settings &rarr; Notifications</em>, and blocking still works with every one of them off &mdash; you simply are not warned before a limit lands.</li>
     <li><strong>Battery-optimisation exemption (optional, strongly recommended).</strong> Stops Android from killing the blocking service in the background. Blocking may be unreliable without it.</li>
     <li><strong>Device admin (optional, only if you turn on Prevent Uninstall).</strong> Prevents DoomBlock from being uninstalled &mdash; by you or by anyone else &mdash; while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
   </ul>
@@ -162,9 +203,11 @@
   <p>
     Your backup is a single JSON snapshot attached to your account, held in our
     Supabase database with row-level security enabled, so only your own account
-    can read your row. Data is encrypted in transit (HTTPS/TLS) and at rest by
-    Supabase. Passwords are hashed with bcrypt and your PIN with SHA-256; neither
-    can be recovered from what we store.
+    can read your row. That applies equally to an account with no email address:
+    the row is protected the same way and reachable only by the account it
+    belongs to. Data is encrypted in transit (HTTPS/TLS) and at rest by Supabase.
+    Passwords are hashed with bcrypt and your PIN with SHA-256; neither can be
+    recovered from what we store.
   </p>
   <p>
     The websites and keywords in your account are the ones <strong>you chose to
@@ -175,14 +218,46 @@
     Those checks happen on your device and the data is discarded immediately
     afterwards.
   </p>
+  <p>
+    One internal record is worth naming. If you add an email address or Google
+    account that already belongs to a different DoomBlock account, we create a
+    single-use transfer token so the account you are signing into can claim the
+    data from the one you were using. The token holds no personal data, expires
+    fifteen minutes after it is created, and is deleted once it has been used.
+  </p>
 
   <h2>Data retention &amp; deletion</h2>
   <p>
-    We keep your account data until you delete your account. You can delete it at
-    any time inside the app (<em>Settings &rarr; your account &rarr; Delete
-    account</em>), which permanently removes your account and your cloud backup
-    and resets the app on your device. You can also request deletion without the
-    app. See our <a href="account-deletion.html">Account Deletion page</a>.
+    We keep your account data until the account is deleted. How you delete it
+    depends on whether it has an email address attached:
+  </p>
+  <ul>
+    <li>
+      <strong>An account you signed into.</strong> Delete it inside the app
+      (<em>Settings &rarr; your account &rarr; Delete account</em>), which
+      permanently removes the account and its cloud backup, and resets the app on
+      your device.
+    </li>
+    <li>
+      <strong>An account with no email, because you continued without signing
+      in.</strong> Add an email address or Google account first &mdash; it
+      attaches to the same account rather than making a new one &mdash; and then
+      delete it exactly as above. Or write to us. Both routes, and what we need
+      in order to act on the second, are on the
+      <a href="account-deletion.html">Account Deletion page</a>.
+    </li>
+  </ul>
+  <p>
+    <strong>One limit we would rather state than let you discover.</strong> An
+    account with no email is reachable only from the app on your device. If you
+    uninstall DoomBlock or clear its data before deleting that account, the
+    backup it holds stays in our database, and there is nothing in it &mdash; no
+    email, no name, no phone number, no device identifier &mdash; for either of
+    us to match it back to you by. The exception is a subscription: a Google Play
+    purchase token is stored alongside it, so if you bought one, your Play order
+    number can still be traced to that account and we can delete it on request.
+    If you want the cloud copy gone, the reliable way is to delete the account,
+    or add an email address to it, <em>before</em> you uninstall.
   </p>
   <p>
     Deleting your account does not cancel your Google Play subscription. Cancel
@@ -197,7 +272,9 @@
     <a href="mailto:support@brosdolz.com">support@brosdolz.com</a>. Depending on
     where you live, you may also have the right to object to or restrict certain
     processing, and to lodge a complaint with your local data protection
-    authority.
+    authority. For an account with no email address we have no way to verify by
+    email that a request is yours, so those rights are exercised through the
+    routes on the <a href="account-deletion.html">Account Deletion page</a>.
   </p>
 
   <h2>Children</h2>
