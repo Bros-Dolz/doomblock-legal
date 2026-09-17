@@ -273,7 +273,7 @@
         <p>Start free with one block group and every blocking feature in it. A subscription lifts the limit on groups and opens your full statistics history.</p>
       </div>
 
-      <div class="plans">
+      <div class="plans" style="max-width:880px">
         <div class="plan">
           <p class="plan-name">Monthly</p>
           <p class="plan-price"><span data-price-monthly>$6.99</span><span class="per">/month</span></p>
@@ -282,19 +282,16 @@
         </div>
 
         <div class="plan plan-best">
-          <span class="badge" data-price-saving>Save 28%</span>
+          <span class="badge">Save 28%</span>
           <p class="plan-name">Yearly</p>
           <p class="plan-price"><span data-price-yearly>$59.99</span><span class="per">/year</span></p>
           <p class="plan-sub">Works out at <span data-price-effective>$5.00</span> a month.</p>
           <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.doomblock.app">Start yearly</a>
         </div>
 
-        <!-- Shown only while Play Console is actually selling the one-time
-             unlock, which is how the offer is switched on and off. The app's
-             paywall gates its own lifetime tile the same way. -->
-        <div class="plan" data-plan-lifetime hidden style="display:none">
+        <div class="plan">
           <p class="plan-name">Lifetime</p>
-          <p class="plan-price"><span data-price-lifetime>&mdash;</span><span class="per">once</span></p>
+          <p class="plan-price"><span data-price-lifetime>$179.99</span><span class="per">once</span></p>
           <p class="plan-sub">One payment, no renewal. Yours for good.</p>
           <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.doomblock.app">Buy lifetime</a>
         </div>
@@ -329,8 +326,9 @@
         the <a href="https://play.google.com/store/account/subscriptions">Play Store</a>
         and DoomBlock keeps working until the period you have paid for runs out.
         No account is needed to subscribe &mdash; a Play subscription proves
-        itself on the device. If you bought the old one-time lifetime unlock, it
-        still works and always will. You never need to subscribe.
+        itself on the device. The lifetime unlock is a one-time purchase, not a
+        subscription: nothing renews and nothing expires, and anyone who bought
+        the earlier one-time unlock keeps it. You never need to subscribe.
       </p>
     </div>
   </section>
@@ -464,27 +462,27 @@
   })();
 
   // ---- Country-aware pricing ----------------------------------------------
-  // DoomBlock is sold in three income tiers (PLAY_PRICING_TIERS.md), so a US
-  // price on this page is the wrong number for two thirds of the countries it
-  // ships to. The table below is generated from play-pricing-tiers.csv, the
-  // same file the Play Console prices are set from.
+  // DoomBlock is sold in three income tiers, so a US price on this page is the
+  // wrong number for two thirds of the countries it ships to. Every figure below
+  // is generated from play-pricing-tiers.csv, which is also what the Play Console
+  // prices are set from: change a tier there, regenerate, paste. Deliberately a
+  // static table and not a lookup against Play; see PLAY_PRICING_TIERS.md.
   //
-  // Detection is entirely local and in this order: a country the visitor
-  // picked before, then the device timezone, then the browser locale's region,
-  // then tier 1. Timezone leads because it says where the device is rather
-  // than what language it is set to; a Londoner with an en-IN phone should not
-  // be quoted India's price, and a Delhi visitor on en-US should not be quoted
-  // America's. Nothing is sent anywhere, and the picker is there because every
-  // one of these signals can be wrong.
+  // Detection is entirely local and in this order: a country the visitor picked
+  // before, then the device timezone, then the browser locale's region, then
+  // tier 1. Timezone leads because it says where the device is rather than what
+  // language it is set to; a Londoner with an en-IN phone should not be quoted
+  // India's price, and a Delhi visitor on en-US should not be quoted America's.
+  // Nothing is sent anywhere, and the picker is there because every one of these
+  // signals can be wrong.
   (function () {
     var DATA = "AE|United Arab Emirates|1;AG|Antigua & Barbuda|2;AL|Albania|2;AM|Armenia|2;AO|Angola|3;AR|Argentina|2;AT|Austria|1;AU|Australia|1;AW|Aruba|1;AZ|Azerbaijan|2;BA|Bosnia & Herzegovina|2;BD|Bangladesh|3;BE|Belgium|1;BF|Burkina Faso|3;BG|Bulgaria|2;BH|Bahrain|1;BJ|Benin|3;BM|Bermuda|1;BO|Bolivia|3;BR|Brazil|2;BS|Bahamas|1;BW|Botswana|2;BY|Belarus|2;BZ|Belize|2;CA|Canada|1;CD|Congo - Kinshasa|3;CF|Central African Republic|3;CG|Congo - Brazzaville|3;CH|Switzerland|1;CI|C\u00f4te d\u2019Ivoire|3;CL|Chile|2;CM|Cameroon|3;CO|Colombia|2;CR|Costa Rica|2;CV|Cape Verde|3;CY|Cyprus|1;CZ|Czechia|1;DE|Germany|1;DJ|Djibouti|3;DK|Denmark|1;DM|Dominica|2;DO|Dominican Republic|2;DZ|Algeria|2;EC|Ecuador|2;EE|Estonia|1;EG|Egypt|3;ER|Eritrea|3;ES|Spain|1;FI|Finland|1;FJ|Fiji|2;FM|Micronesia|3;FR|France|1;GA|Gabon|2;GB|United Kingdom|1;GD|Grenada|2;GE|Georgia|2;GH|Ghana|3;GI|Gibraltar|1;GM|Gambia|3;GN|Guinea|3;GR|Greece|1;GT|Guatemala|2;GW|Guinea-Bissau|3;HK|Hong Kong|1;HN|Honduras|3;HR|Croatia|2;HT|Haiti|3;HU|Hungary|2;ID|Indonesia|2;IE|Ireland|1;IL|Israel|1;IN|India|3;IQ|Iraq|2;IS|Iceland|1;IT|Italy|1;JM|Jamaica|2;JO|Jordan|3;JP|Japan|1;KE|Kenya|3;KG|Kyrgyzstan|3;KH|Cambodia|3;KM|Comoros|3;KN|St. Kitts & Nevis|2;KR|South Korea|1;KW|Kuwait|1;KY|Cayman Islands|1;KZ|Kazakhstan|2;LA|Laos|3;LB|Lebanon|3;LC|St. Lucia|2;LI|Liechtenstein|1;LK|Sri Lanka|3;LR|Liberia|3;LT|Lithuania|1;LU|Luxembourg|1;LV|Latvia|1;LY|Libya|2;MA|Morocco|3;MC|Monaco|1;MD|Moldova|2;MK|North Macedonia|2;ML|Mali|3;MM|Myanmar (Burma)|3;MN|Mongolia|2;MO|Macao|1;MT|Malta|1;MU|Mauritius|2;MV|Maldives|2;MX|Mexico|2;MY|Malaysia|2;MZ|Mozambique|3;NA|Namibia|2;NE|Niger|3;NG|Nigeria|3;NI|Nicaragua|3;NL|Netherlands|1;NO|Norway|1;NP|Nepal|3;NZ|New Zealand|1;OM|Oman|1;PA|Panama|2;PE|Peru|2;PG|Papua New Guinea|3;PH|Philippines|3;PK|Pakistan|3;PL|Poland|2;PT|Portugal|1;PY|Paraguay|2;QA|Qatar|1;RO|Romania|2;RS|Serbia|2;RU|Russia|2;RW|Rwanda|3;SA|Saudi Arabia|1;SB|Solomon Islands|3;SC|Seychelles|2;SE|Sweden|1;SG|Singapore|1;SI|Slovenia|1;SK|Slovakia|1;SL|Sierra Leone|3;SM|San Marino|1;SN|Senegal|3;SO|Somalia|3;SR|Suriname|2;SV|El Salvador|3;TC|Turks & Caicos Islands|1;TD|Chad|3;TG|Togo|3;TH|Thailand|2;TJ|Tajikistan|3;TM|Turkmenistan|2;TN|Tunisia|3;TO|Tonga|2;TR|T\u00fcrkiye|2;TT|Trinidad & Tobago|2;TW|Taiwan|1;TZ|Tanzania|3;UA|Ukraine|3;UG|Uganda|3;US|United States|1;UY|Uruguay|2;UZ|Uzbekistan|3;VA|Vatican City|1;VE|Venezuela|3;VG|British Virgin Islands|1;VN|Vietnam|3;VU|Vanuatu|3;WS|Samoa|3;YE|Yemen|3;ZA|South Africa|2;ZM|Zambia|3;ZW|Zimbabwe|3";
-    // tier: [monthly, yearly, effective monthly on the yearly plan]
+    // tier: [monthly, yearly, effective monthly on the yearly plan, lifetime]
     var PRICES = {
-      "1": ["$6.99", "$59.99", "$5.00"],
-      "2": ["$3.49", "$29.99", "$2.50"],
-      "3": ["$1.99", "$16.99", "$1.42"]
+      "1": ["$6.99", "$59.99", "$5.00", "$179.99"],
+      "2": ["$3.49", "$29.99", "$2.50", "$89.99"],
+      "3": ["$1.99", "$16.99", "$1.42", "$49.99"]
     };
-    // Tier 2 and 3 zones only: anything unmapped lands on tier 1 anyway.
     var ZONES = {
       "America/Sao_Paulo":"BR","America/Bahia":"BR","America/Fortaleza":"BR",
       "America/Recife":"BR","America/Manaus":"BR","America/Belem":"BR","America/Cuiaba":"BR",
@@ -536,19 +534,6 @@
     };
     var KEY = "db-country";
 
-    // Play Console is the real source of truth for what anything costs, and the
-    // app reads it live through `queryProductDetails`. A web page cannot hold
-    // the credential that would take, so `supabase/functions/pricing` does it
-    // and this fetches the answer. Paste that function's URL here and the table
-    // above stops being the price: the numbers, the currency, the saving
-    // percentage and whether the lifetime unlock is on sale at all then follow
-    // Play Console within its cache window, with nothing to edit here.
-    //
-    // Left empty, or unreachable, the page renders from the table and the
-    // lifetime tile stays hidden. That is the fallback, not a broken state.
-    var ENDPOINT = "https://rchtdkofbaetpzxbxyvm.supabase.co/functions/v1/pricing";
-    var LIVE = null;
-
     var tier = {}, name = {}, sorted = [];
     DATA.split(";").forEach(function (row) {
       var p = row.split("|");
@@ -590,27 +575,6 @@
       return "US";
     }
 
-    // Play's own unit: 6_990_000 micros is 6.99, in the currency Play charges
-    // in that region. Formatting is the visitor's locale doing its job; no
-    // conversion happens anywhere on this page.
-    function money(m) {
-      if (!m || !m.currency) return null;
-      try {
-        return new Intl.NumberFormat(undefined, {
-          style: "currency",
-          currency: m.currency
-        }).format(m.micros / 1000000);
-      } catch (e) {
-        return null;
-      }
-    }
-
-    function priceFor(product, code) {
-      var p = LIVE && LIVE.products && LIVE.products[product];
-      if (!p || !p.available) return null;
-      return (p.regions && p.regions[code]) || p.fallback || null;
-    }
-
     function put(attr, text) {
       var n = document.querySelector("[" + attr + "]");
       if (n) n.textContent = text;
@@ -618,54 +582,20 @@
 
     function render(code) {
       var p = PRICES[tier[code] || "1"];
-      var monthly = priceFor("monthly", code);
-      var yearly = priceFor("yearly", code);
-      var lifetime = priceFor("lifetime", code);
-
-      var mLabel = money(monthly) || p[0];
-      var yLabel = money(yearly) || p[1];
-      var eLabel = yearly
-        ? money({ currency: yearly.currency,
-                  micros: Math.round(yearly.micros / 12) }) || p[2]
-        : p[2];
-
-      put("data-price-monthly", mLabel);
-      put("data-price-yearly", yLabel);
-      put("data-price-effective", eLabel);
-      put("data-price-hero", mLabel + "/month or " + yLabel + "/year");
+      put("data-price-monthly", p[0]);
+      put("data-price-yearly", p[1]);
+      put("data-price-effective", p[2]);
+      put("data-price-lifetime", p[3]);
+      put("data-price-hero", p[0] + "/month or " + p[1] + "/year");
       put("data-price-country", name[code] || name.US);
-
-      // Computed rather than written down, because a price changed in Console
-      // must not leave a stale percentage sitting next to it.
-      if (monthly && yearly && monthly.micros > 0) {
-        var saved = Math.floor((1 - yearly.micros / (monthly.micros * 12)) * 100);
-        put("data-price-saving", saved > 0 ? "Save " + saved + "%" : "");
-      }
-
-      var tile = document.querySelector("[data-plan-lifetime]");
-      if (tile) {
-        // Both, and the inline display is the one that does the work: `.plan`
-        // sets `display: flex`, and an author rule beats the browser's own
-        // `[hidden] { display: none }`. Clearing the inline value hands the tile
-        // back to the class rather than hard-coding flex here.
-        tile.hidden = !lifetime;
-        tile.style.display = lifetime ? "" : "none";
-        if (lifetime) {
-          put("data-price-lifetime", money(lifetime));
-          // Two tiles fit the 760px grid; three need room to stay side by side.
-          if (tile.parentNode && tile.parentNode.style) {
-            tile.parentNode.style.maxWidth = "880px";
-          }
-        }
-      }
     }
 
     var code = detect();
     render(code);
 
-    // The picker is built here rather than in the markup so that a visitor
-    // with JavaScript off sees a working page with tier-1 prices instead of an
-    // empty dropdown.
+    // The picker is built here rather than in the markup so that a visitor with
+    // JavaScript off sees a working page with tier-1 prices instead of an empty
+    // dropdown.
     var host = document.querySelector("[data-price-region]");
     if (host) {
       var label = document.createElement("label");
@@ -690,17 +620,6 @@
       });
       label.appendChild(sel);
       host.appendChild(label);
-    }
-
-    if (ENDPOINT && window.fetch) {
-      fetch(ENDPOINT)
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (body) {
-          if (!body || !body.products) return;
-          LIVE = body;
-          render(code);
-        })
-        .catch(function () { /* the table already rendered; leave it alone */ });
     }
   })();
 </script>
