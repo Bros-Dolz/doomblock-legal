@@ -57,7 +57,7 @@
 <main class="wrap doc">
   <span class="eyebrow">Legal</span>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 17 September 2026</p>
+  <p class="updated">Last updated: 18 September 2026</p>
 
   <p class="lead">
     DoomBlock is a screen-time, app and website blocking app for Android,
@@ -88,11 +88,13 @@
         subscription. Nothing is created fresh and nothing is lost.
       </li>
       <li>
-        <strong>Deleting it takes one of the two routes on our
-        <a href="account-deletion.html">Account Deletion page</a></strong>,
-        because the in-app <em>Delete account</em> button sits behind the account
-        row, which an account with no email does not have. That page sets out
-        both routes, and their limits, in full.
+        <strong>You can delete it from inside the app.</strong>
+        <em>Settings &rarr; Account &rarr; Clear data</em> deletes the account
+        and its cloud backup and resets DoomBlock to a fresh install. The same
+        page shows your <strong>account ID</strong>, which is the one thing that
+        identifies the account if you would rather write to us. Both of those,
+        and the limits that remain, are set out on our
+        <a href="account-deletion.html">Account Deletion page</a>.
       </li>
     </ul>
   </div>
@@ -187,7 +189,7 @@
     </li>
     <li><strong>Usage access (optional).</strong> Measures time spent in apps. Statistics cannot be calculated without it, so it is required there. Blocking and session limits do <em>not</em> depend on it &mdash; session time is counted from the accessibility service's own window events &mdash; so for those the app treats it as a recommendation that makes detection more resilient, and one you can dismiss for good.</li>
     <li><strong>Display over other apps.</strong> Core to how the app works. Shows the block screen on top of a blocked app so you can interact with it, and displays your session-limit timer.</li>
-    <li><strong>Background running, and notifications (optional).</strong> The blocking service runs in the foreground with an ongoing notification, which Android requires and which also shows whether blocking is active. Beyond that, DoomBlock can tell you when blocking is paused and when session time is running out; each of those is a separate switch under <em>Settings &rarr; Notifications</em>, and blocking still works with every one of them off &mdash; you simply are not warned before a limit lands.</li>
+    <li><strong>Background running, and notifications (optional).</strong> The blocking service runs in the foreground with an ongoing notification, which Android requires and which also shows whether blocking is active. Beyond that, DoomBlock can tell you when blocking is paused and when session time is running out. Each of those is a separate notification with its own switch in <em>your phone's</em> notification settings, which <em>Settings &rarr; Notifications</em> in DoomBlock lists and links you straight to; blocking still works with every one of them off &mdash; you simply are not warned before a limit lands.</li>
     <li><strong>Battery-optimisation exemption (optional, strongly recommended).</strong> Stops Android from killing the blocking service in the background. Blocking may be unreliable without it.</li>
     <li><strong>Device admin (optional, only if you turn on Prevent Uninstall).</strong> Prevents DoomBlock from being uninstalled &mdash; by you or by anyone else &mdash; while a block is active. It is used for nothing else: DoomBlock never locks your device, wipes it, disables the camera, or otherwise controls it. You can turn it off at any time.</li>
   </ul>
@@ -240,24 +242,30 @@
     </li>
     <li>
       <strong>An account with no email, because you continued without signing
-      in.</strong> Add an email address or Google account first &mdash; it
-      attaches to the same account rather than making a new one &mdash; and then
-      delete it exactly as above. Or write to us. Both routes, and what we need
-      in order to act on the second, are on the
-      <a href="account-deletion.html">Account Deletion page</a>.
+      in.</strong> Delete it inside the app too, with
+      <em>Settings &rarr; Account &rarr; Clear data</em>, which removes the
+      account and its cloud backup and resets this device. It asks for no email
+      address because there is none to verify &mdash; the app is already inside
+      your account, which is the proof. You can instead add an email address and
+      delete it as above, or write to us quoting the account ID shown on that
+      same page. All three routes, and what we need in order to act on the last,
+      are on the <a href="account-deletion.html">Account Deletion page</a>.
     </li>
   </ul>
   <p>
     <strong>One limit we would rather state than let you discover.</strong> An
-    account with no email is reachable only from the app on your device. If you
-    uninstall DoomBlock or clear its data before deleting that account, the
-    backup it holds stays in our database, and there is nothing in it &mdash; no
-    email, no name, no phone number, no device identifier &mdash; for either of
-    us to match it back to you by. The exception is a subscription: a Google Play
-    purchase token is stored alongside it, so if you bought one, your Play order
-    number can still be traced to that account and we can delete it on request.
-    If you want the cloud copy gone, the reliable way is to delete the account,
-    or add an email address to it, <em>before</em> you uninstall.
+    account with no email is reachable only from the app on your device, and so
+    is the ID that names it. While DoomBlock is installed there is always a way
+    through &mdash; Clear data does the whole thing yourself, and the account ID
+    lets us find your record if you would rather ask. If you uninstall the app,
+    or clear its data from Android's own app settings, before doing either, the
+    backup it holds stays in our database, and there is nothing left in it
+    &mdash; no email, no name, no phone number, no device identifier &mdash; for
+    either of us to match it back to you by. The exception is a subscription: a
+    Google Play purchase token is stored alongside it, so if you bought one, your
+    Play order number can still be traced to that account and we can delete it on
+    request. If you want the cloud copy gone, use <em>Clear data</em> rather than
+    uninstalling, because it deletes the cloud side first.
   </p>
   <p>
     Deleting your account does not cancel your Google Play subscription. Cancel
@@ -272,9 +280,13 @@
     <a href="mailto:support@brosdolz.com">support@brosdolz.com</a>. Depending on
     where you live, you may also have the right to object to or restrict certain
     processing, and to lodge a complaint with your local data protection
-    authority. For an account with no email address we have no way to verify by
-    email that a request is yours, so those rights are exercised through the
-    routes on the <a href="account-deletion.html">Account Deletion page</a>.
+    authority. For an account with no email address there is no address for us to
+    verify a request against, so what identifies it instead is the
+    <strong>account ID</strong> under <em>Settings &rarr; Account</em> &mdash;
+    quote it and we can act on your request. Deletion needs no request at all:
+    <em>Clear data</em>, on that same page, does it immediately. The
+    <a href="account-deletion.html">Account Deletion page</a> sets out every
+    route and its limits.
   </p>
 
   <h2>Children</h2>
