@@ -66,39 +66,6 @@
     <a href="mailto:support@brosdolz.com">support@brosdolz.com</a>.
   </p>
 
-  <div class="callout">
-    <p>
-      <strong>Using DoomBlock without an account.</strong> Signing in is
-      optional. If you choose <em>Continue without an account</em> during setup
-      &mdash; or redeem a code before signing in &mdash; DoomBlock still creates
-      an account for you on our server, with <strong>no email address, no name
-      and no password attached to it</strong>. It is identified only by a random
-      ID. Your DoomBlock setup is backed up to that account exactly as it would
-      be to one you signed into, and a subscription or redeemed code is held
-      there too.
-    </p>
-    <p>Two things follow from that, and both are worth knowing up front:</p>
-    <ul>
-      <li>
-        <strong>It cannot be signed in to from another device.</strong> There is
-        no email or password to sign in with, so the account is reachable only
-        from the app on this phone. Adding an email address or a Google account
-        later (<em>Settings &rarr; Add an account</em>) attaches it to the
-        account you already have: the same ID, the same backup, the same
-        subscription. Nothing is created fresh and nothing is lost.
-      </li>
-      <li>
-        <strong>You can delete it from inside the app.</strong>
-        <em>Settings &rarr; Account &rarr; Clear data</em> deletes the account
-        and its cloud backup and resets DoomBlock to a fresh install. The same
-        page shows your <strong>account ID</strong>, which is the one thing that
-        identifies the account if you would rather write to us. Both of those,
-        and the limits that remain, are set out on our
-        <a href="account-deletion.html">Account Deletion page</a>.
-      </li>
-    </ul>
-  </div>
-
   <h2>Data we collect</h2>
   <div class="table-wrap">
     <table>
@@ -107,7 +74,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>A random account ID, created for you whether or not you sign in</td>
+          <td>A random account ID. Created when you create an account or sign in &mdash; or, if you redeem an unlock code while signed out, at that moment, because the code has to be granted to some account. Nothing else creates one: continuing without an account, and using the app day to day, create no account and send us nothing.</td>
           <td>To have something for your backup, your subscription and any redeemed code to belong to, so they survive an app update and can be restored.</td>
           <td>Created and stored by our authentication and database provider, Supabase. It is a random identifier generated on our side &mdash; not your advertising ID, not your Android ID, and not derived from your device or phone number. On its own it identifies nobody.</td>
         </tr>
@@ -140,7 +107,7 @@
             </ul>
           </td>
           <td>To back up your setup and sync it across your devices.</td>
-          <td>Stored in your account with Supabase &mdash; including an account with no email address attached, which is why a cloud backup exists even if you never signed in. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
+          <td>Stored in your account with Supabase &mdash; including an account with no email address attached, which is how a backup can exist for someone who never signed in but did redeem a code. With no account at all, none of this is uploaded: it stays on your device and there is no cloud copy to delete. Your PIN itself is never stored or transmitted, only an irreversible hash of it.</td>
         </tr>
         <tr>
           <td>Subscription data: your Google Play purchase token, the product you bought, your current subscription status, and &mdash; if you used one &mdash; your beta code and the date you redeemed it</td>
@@ -241,8 +208,10 @@
       your device.
     </li>
     <li>
-      <strong>An account with no email, because you continued without signing
-      in.</strong> Delete it inside the app too, with
+      <strong>An account with no email, created by redeeming a code while
+      signed out.</strong> That is the only thing that makes one &mdash; if you
+      have never redeemed a code, you have no account and nothing of yours is on
+      our servers to delete. Delete it inside the app with
       <em>Settings &rarr; Account &rarr; Clear data</em>, which removes the
       account and its cloud backup and resets this device. It asks for no email
       address because there is none to verify &mdash; the app is already inside
