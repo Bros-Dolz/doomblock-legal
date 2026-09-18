@@ -74,7 +74,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>A random account ID. Created when you create an account or sign in &mdash; or, if you redeem an unlock code while signed out, at that moment, because the code has to be granted to some account. Nothing else creates one: continuing without an account, and using the app day to day, create no account and send us nothing.</td>
+          <td>A random account ID. Created when you create an account or sign in &mdash; or, if you redeem an unlock code while signed out, at that moment, because the code has to be granted to some account. <strong>Redeeming a code is the only thing that ever creates an account with no email address and no password on it. Nothing else creates one</strong> &mdash; not choosing <em>Continue without an account</em>, not subscribing, not simply using the app. Without an account, nothing is uploaded and we hold no record of you at all.</td>
           <td>To have something for your backup, your subscription and any redeemed code to belong to, so they survive an app update and can be restored.</td>
           <td>Created and stored by our authentication and database provider, Supabase. It is a random identifier generated on our side &mdash; not your advertising ID, not your Android ID, and not derived from your device or phone number. On its own it identifies nobody.</td>
         </tr>
@@ -198,7 +198,16 @@
   <h2>Data retention &amp; deletion</h2>
   <p>
     We keep your account data until the account is deleted. How you delete it
-    depends on whether it has an email address attached:
+    depends on whether it has an email address attached &mdash; and there is
+    only one way to end up with an account that has none:
+  </p>
+  <p>
+    <strong>An account with no email address and no password on it is created
+    only when you redeem an unlock code while signed out, and by nothing
+    else.</strong> Choosing <em>Continue without an account</em> during setup
+    does not create one, subscribing does not create one, and using the app does
+    not create one. If you have never redeemed a code without signing in, you
+    have no account, no cloud backup, and nothing on our servers to delete.
   </p>
   <ul>
     <li>
@@ -209,9 +218,7 @@
     </li>
     <li>
       <strong>An account with no email, created by redeeming a code while
-      signed out.</strong> That is the only thing that makes one &mdash; if you
-      have never redeemed a code, you have no account and nothing of yours is on
-      our servers to delete. Delete it inside the app with
+      signed out.</strong> Delete it inside the app with
       <em>Settings &rarr; Account &rarr; Clear data</em>, which removes the
       account and its cloud backup and resets this device. It asks for no email
       address because there is none to verify &mdash; the app is already inside
